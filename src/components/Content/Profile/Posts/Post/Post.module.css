@@ -1,0 +1,68 @@
+.post {
+	display: flex;
+	padding: 5px;
+}
+
+.post__ava {
+	height: 60px;
+	border-radius: 50%;
+}
+
+.post__container {
+	width: 70%;
+	margin-left: 10px;
+	min-height: 100px;
+	padding: 10px;
+	background: linear-gradient(170deg, rgba(255, 203, 82, 0.9) 0%, rgba(6, 110, 255, .4)100%);
+	border: 2px solid var(--border-color);
+	border-radius: 15px;
+	position: relative;
+
+}
+
+.post__container::before,
+.post__container::after {
+	content: '';
+	position: absolute;
+	left: -16px;
+	top: 20px;
+	border: 7px solid transparent;
+	border-right: 7px solid rgb(59, 118, 138);
+}
+
+.post__container::after {
+	border-right: 7px solid rgba(255, 203, 82, 1);
+	top: 20px;
+	left: -13px;
+}
+
+.nickName {
+	margin-bottom: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	color: rgb(32, 54, 54);
+}
+
+.likes {
+	margin-top: 5px;
+	display: flex;
+	height: 25px;
+}
+
+.likes__img {
+	display: flex;
+	height: 25px;
+	width: 25px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url('../../../../../img/iconRedHeart.png');
+}
+
+.post__btn_like {
+	display: flex;
+	height: 25px;
+	align-items: center;
+	justify-content: flex-end;
+	border: none;
+	background-color: unset;
+}

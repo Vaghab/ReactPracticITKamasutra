@@ -1,19 +1,22 @@
 import React from "react";
 import "./App.css";
-import Content from "./components/Content";
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
+import Content from "./components/Content/Content";
+import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-	return (
-		<div className="app">
-			<div className="app__wrapper">
-				<Header></Header>
-				<Navbar></Navbar>
-				<Content></Content>
-			</div>
-		</div>
-	);
+  return (
+    <BrowserRouter>
+      <div className="app">
+        <div className="app__wrapper">
+          <Header />
+          <Navbar />
+          <Content />
+        </div>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;

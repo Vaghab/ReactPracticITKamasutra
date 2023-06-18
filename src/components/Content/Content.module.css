@@ -1,0 +1,13 @@
+.content {
+	display: grid;
+	width: 100%;
+	grid-column: 2/13;
+}
+
+.BGIMG {
+	width: 100%;
+	height: 300px;
+	image-rendering: pixelated;
+	overflow: hidden;
+	object-fit: cover;
+}

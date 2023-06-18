@@ -1,0 +1,13 @@
+.dialogs {
+	display: grid;
+}
+
+.dialogNames {
+	display: grid;
+	grid-column: 1/1;
+}
+
+.dialogMSGs {
+	display: grid;
+	grid-column: 2/5;
+}

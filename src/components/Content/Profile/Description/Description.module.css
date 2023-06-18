@@ -1,0 +1,34 @@
+.description {
+	min-height: 100px;
+	margin: 5px 0 5px 0;
+	padding: 10px;
+	display: grid;
+	grid-template-columns: repeat(11, 1fr);
+	gap: 10px;
+	background-color: rgb(173 184 204);
+	border-radius: 15px;
+	filter: drop-shadow(3px 3px 3px gray);
+}
+
+.description__ava {
+	width: 100px;
+	height: 100px;
+	grid-column: 1/1;
+	border-radius: 50%;
+	border: 1px solid black;
+}
+
+.description__info {
+	grid-column: 2/12;
+}
+
+.description__name {
+	font-size: 20px;
+	font-weight: 600;
+	margin: 15px;
+}
+
+.description__about {
+	margin: 5px;
+	line-height: 20px;
+}
