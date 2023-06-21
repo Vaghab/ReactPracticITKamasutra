@@ -3,7 +3,7 @@ import Posts from "./Posts/Posts";
 import style from "./Profile.module.css";
 import Description from "./Description/Description";
 
-const Profile = () => {
+const Profile = props => {
   return (
     <div className={style.profile}>
       <img
@@ -17,7 +17,7 @@ const Profile = () => {
           name="Artur Levinsky"
           about="lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid ut labore et dolore magna aliqu fugiat nulla pariatur dolore magna aliqua. Ut enim ad minim veniam, quis nostr placeholder text et dolore magna aliqu fug no varto. Ut enim ad minim veniam, quis nost"
         />
-        <Posts></Posts>
+        <Posts PostsData={props.Data.PostsData} AddPost={props.AddPost}></Posts>
       </div>
     </div>
   );

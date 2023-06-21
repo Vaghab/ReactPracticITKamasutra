@@ -1,0 +1,4 @@
+.dialogMSGs {
+	display: grid;
+	grid-column: 2/5;
+}

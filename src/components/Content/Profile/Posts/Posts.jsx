@@ -3,13 +3,16 @@ import NewPost from "./NewPost/NewPost";
 import Post from "./Post/Post";
 import style from "./Posts.module.css";
 
-const Posts = () => {
+const Posts = props => {
+  const data = props.PostsData;
+  const PostsElements = data.map(p => {
+    return <Post message={p.message} likesCount={p.likesCount} key={p.id} />;
+  });
+
   return (
     <div className={style.posts}>
-      <NewPost />
-      <div className={style.allPosts}></div>
-      <Post message="Чё там леее???" likesCount="20" />
-      <Post message="Ниче, а там че лэээ???" likesCount="10" />
+      <NewPost AddPost={props.AddPost} />
+      <div className={style.allPosts}>{PostsElements}</div>
     </div>
   );
 };

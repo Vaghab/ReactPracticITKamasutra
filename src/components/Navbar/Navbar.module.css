@@ -10,12 +10,8 @@
 	box-shadow: inset 0px 0px 5px 3px #00000041;
 	filter: drop-shadow(0 0 6px rgb(0, 0, 0));
 	z-index: 0;
-	transition: all .2s cubic-bezier(0.87, -0.72, 0.44, 1.53);
 }
 
-.navbar:hover {
-	/* transform: scale(1.5); */
-}
 
 .item {
 	color: white;
