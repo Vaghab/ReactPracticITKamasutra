@@ -1,3 +1,7 @@
+import DialogsPageReducer from "./dialogsPage-reducer";
+import ProfilePageReducer from "./profilePage-reducer";
+import SideBarReducer from "./sideBar-reducer";
+
 let store = {
   _state: {
     DialogsPage: {
@@ -29,6 +33,7 @@ let store = {
           name: "Шахиридаза",
         },
       ],
+      newMessageText: "",
     },
     ProfilePage: {
       PostsData: [
@@ -40,11 +45,12 @@ let store = {
       ],
       NewPostText: "",
     },
+    sidebar: {},
   },
+
   _Rerender() {
     console.log("state is changed");
   },
-
   getState() {
     return this._state;
   },
@@ -52,35 +58,18 @@ let store = {
     this._Rerender = observer;
   },
 
-  AddPost() {
-    let newPost = {
-      id: 5,
-      message: this._state.ProfilePage.NewPostText,
-      likesCount: 0,
-    };
-    this._state.ProfilePage.PostsData.push(newPost);
-    this._state.ProfilePage.NewPostText = "";
-    this._Rerender(this._state);
-  },
-  UpdateNewPostText(NewText) {
-    this._state.ProfilePage.NewPostText = NewText;
-    this._Rerender(this._state);
-  },
-
   dispatch(action) {
-    if (action.type === "ADD-POST") {
-      let newPost = {
-        id: 5,
-        message: this._state.ProfilePage.NewPostText,
-        likesCount: 0,
-      };
-      this._state.ProfilePage.PostsData.push(newPost);
-      this._state.ProfilePage.NewPostText = "";
-      this._Rerender(this._state);
-    } else if (action.type === "UPDATE-NEW-POST") {
-      this._state.ProfilePage.NewPostText = action.NewPostText;
-      this._Rerender(this._state);
-    }
+    this._state.ProfilePage = ProfilePageReducer(
+      this._state.ProfilePage,
+      action
+    );
+    this._state.DialogsPage = DialogsPageReducer(
+      this._state.DialogsPage,
+      action
+    );
+    this._state.sidebar = SideBarReducer(this._state.sidebar, action);
+
+    this._Rerender(this._state);
   },
 };
 

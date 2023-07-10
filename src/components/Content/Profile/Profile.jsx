@@ -4,6 +4,7 @@ import style from "./Profile.module.css";
 import Description from "./Description/Description";
 
 const Profile = props => {
+  console.log(props);
   return (
     <div className={style.profile}>
       <img

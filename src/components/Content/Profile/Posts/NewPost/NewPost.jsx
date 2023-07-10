@@ -1,18 +1,22 @@
 import React from "react";
 import style from "./NewPost.module.css";
+import {
+  addPostAC,
+  updateNewPostAC,
+} from "../../../../../redux/profilePage-reducer";
 
 const NewPost = props => {
+  // console.log(props);
+
   const newPostRef = React.createRef();
 
   const AddPost = () => {
-    let text = newPostRef.current.value;
-    props.dispatch({ type: "ADD-POST" });
+    props.dispatch(addPostAC);
   };
 
   const onPostChange = () => {
     const text = newPostRef.current.value;
-    const action = { type: "UPDATE-NEW-POST", NewPostText: text };
-    props.dispatch(action);
+    props.dispatch(updateNewPostAC(text));
   };
 
   return (

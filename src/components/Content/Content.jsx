@@ -19,7 +19,7 @@ const Content = props => {
         />
         <Route
           path="/dialogs"
-          element={<Dialogs state={props.state.DialogsPage} />}
+          element={<Dialogs state={props.state} dispatch={props.dispatch} />}
         />
       </Routes>
     </div>

@@ -1,23 +1,12 @@
 import React from "react";
 import style from "./Messages.module.css";
-
-// const MessagesData = [
-//   {
-//     id: "1",
-//     message: "Че там лэ?",
-//   },
-//   {
-//     id: "2",
-//     message: "Че молчишь?",
-//   },
-//   {
-//     id: "3",
-//     message: "Молчишь - в ж*пе торчишь",
-//   },
-// ];
+import {
+  sendMessageAC,
+  updateNewMessageAC,
+} from "../../../../redux/dialogsPage-reducer";
 
 const Messages = props => {
-  const data = props.MessagesData;
+  const data = props.state.DialogsPage.MessagesData;
   const MessagesElements = data.map(m => {
     return (
       <div message={m.message} key={m.id}>
@@ -25,10 +14,28 @@ const Messages = props => {
       </div>
     );
   });
+  let newMessage = props.state.DialogsPage.newMessageText;
+  const sendMessage = () => {
+    props.dispatch(sendMessageAC());
+  };
+  const newMessageChange = e => {
+    let newText = e.target.value;
+    props.dispatch(updateNewMessageAC(newText));
+  };
 
   return (
     <>
       <div className={style.dialogMSGs}>{MessagesElements}</div>
+      <div>
+        <div>
+          <textarea
+            value={newMessage}
+            onChange={newMessageChange}
+            placeholder="enter your text"></textarea>
+          <button onClick={sendMessage}>Send</button>
+        </div>
+        <div></div>
+      </div>
     </>
   );
 };
