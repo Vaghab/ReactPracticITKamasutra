@@ -10,7 +10,7 @@ function App(props) {
       <div className="app__wrapper">
         <Header />
         <Navbar />
-        <Content Data={props} AddPost={props.AddPost} />
+        <Content state={props.state} dispatch={props.dispatch} />
       </div>
     </div>
   );

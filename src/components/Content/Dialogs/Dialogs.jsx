@@ -4,12 +4,11 @@ import DialogUsers from "./DialogUsers/DialogUsers";
 import Messages from "./Messages/Messages";
 
 const Dialogs = props => {
-  const data = props.Data;
   return (
     <>
       <div className={style.dialogs}>
-        <DialogUsers DialogUserData={data.DialogUserData} />
-        <Messages MessagesData={data.MessagesData} />
+        <DialogUsers DialogUserData={props.state.DialogUserData} />
+        <Messages MessagesData={props.state.MessagesData} />
       </div>
     </>
   );

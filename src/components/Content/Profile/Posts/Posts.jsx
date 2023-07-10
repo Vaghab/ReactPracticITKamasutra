@@ -11,7 +11,7 @@ const Posts = props => {
 
   return (
     <div className={style.posts}>
-      <NewPost AddPost={props.AddPost} />
+      <NewPost dispatch={props.dispatch} />
       <div className={style.allPosts}>{PostsElements}</div>
     </div>
   );

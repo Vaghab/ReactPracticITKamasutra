@@ -5,15 +5,22 @@ import style from "./Content.module.css";
 import { Route, Routes } from "react-router-dom";
 
 const Content = props => {
-  const data = props.Data.state;
   return (
     <div className={style.content}>
       <Routes>
         <Route
           path="/profile"
-          element={<Profile Data={data.ProfilePage} AddPost={props.AddPost} />}
+          element={
+            <Profile
+              ProfilePage={props.state.ProfilePage}
+              dispatch={props.dispatch}
+            />
+          }
         />
-        <Route path="/dialogs" element={<Dialogs Data={data.DialogsPage} />} />
+        <Route
+          path="/dialogs"
+          element={<Dialogs state={props.state.DialogsPage} />}
+        />
       </Routes>
     </div>
   );
